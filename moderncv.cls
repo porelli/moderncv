@@ -60,6 +60,15 @@
 
 % execute default options
 \ExecuteOptions{a4paper,11pt,final}
+% document type
+\newif\iflong
+\longtrue % true = CV, false = Résumé
+\newif\ifcoverletter
+\coverletterfalse % true = attach cover letter, false = print only cv/résumé
+\newif\ifinfoiconbold
+\infoiconboldtrue % true = make info icon text using bold, false = make info icon text not using bold
+\newif\ifinfotextbold
+\infotextboldfalse % true = make info text using bold, false = make info text not using bold
 
 % process given options
 \ProcessOptions\relax
