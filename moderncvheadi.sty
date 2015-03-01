@@ -205,6 +205,7 @@
                 \else{
                   \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink[\@homepagetitle]{\@homepage}}{\httpslink[\@homepagetitle]{\@homepage}} }\fi}}}}%
         \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}}\fi%
+        \ifthenelse{\isundefined{\@dateinfo}}{}{\makenewline{\@dateinfo}}%
     \end{minipage}\\[1em]
   % recipient block
   \begin{minipage}[t]{.5\textwidth}

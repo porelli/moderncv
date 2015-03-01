@@ -100,18 +100,20 @@
       \ifthenelse{\isundefined{\@homepage}}{}{%
         \ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
           {\addtomakeheaddetails{\homepagesymbol{
-            \ifinfotextbold{\bfseries 
+            \ifinfotextbold{\bfseries
               \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink{\@homepage}}{\httpslink{\@homepage}} }
             \else{
               \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink{\@homepage}}{\httpslink{\@homepage}} }\fi}}}%
           {\addtomakeheaddetails{\homepagesymbol{
-            \ifinfotextbold{\bfseries 
+            \ifinfotextbold{\bfseries
               \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink[\@homepagetitle]{\@homepage}}{\httpslink[\@homepagetitle]{\@homepage}} }
             \else{
-              \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink[\@homepagetitle]{\@homepage}}{\httpslink[\@homepagetitle]{\@homepage}} }\fi}}}}% 
+              \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink[\@homepagetitle]{\@homepage}}{\httpslink[\@homepagetitle]{\@homepage}} }\fi}}}}%
       \collectionloop{socials}{% the key holds the social type (=symbol command prefix), the item holds the link
         \addtomakeheaddetails{\csname\collectionloopkey socialsymbol\endcsname\collectionloopitem}}%
+      \ifthenelse{\isundefined{\@work}}{}{\addtomakeheaddetails{\worksymbol{\ifinfotextbold{\bfseries \@work}\else{\@work}\fi}}}%
       \ifthenelse{\isundefined{\@extrainfo}}{}{\addtomakeheaddetails{\@extrainfo}}%
+      \ifthenelse{\isundefined{\@dateinfo}}{}{\addtomakeheaddetails{\@dateinfo}}%
       \flushmakeheaddetails}\fi}}% need to force a \par after this to avoid weird spacing bug at the first section if no blank line is left after \makehead
 
 
