@@ -18,7 +18,7 @@
 %-------------------------------------------------------------------------------
 % MarVoSym font
 %\RequirePackage{marvosym}
-\newcommand*{\marvosymbol}[1]{}
+%\newcommand*{\marvosymbol}[1]{}
 %\ifxetexorluatex
 %  \renewcommand*{\marvosymbol}[1]{{\fontspec{MarVoSym}\char#1}}
 %\else
@@ -35,17 +35,17 @@
 %\renewcommand*{\labelitemiv}         {\labelitemiii}                                         % no change from default in moderncv.cls
 
 \renewcommand*{\addresssymbol}       {}
-\renewcommand*{\mobilephonesymbol}   {\textbf{M}~}
-\renewcommand*{\fixedphonesymbol}    {\textbf{T}~}
-\renewcommand*{\faxphonesymbol}      {\textbf{F}~}
-\renewcommand*{\emailsymbol}         {\textbf{E}~}
-\renewcommand*{\homepagesymbol}      {\textbf{W}~}
-\renewcommand*{\linkedinsocialsymbol}{\textbf{in}~}
-\renewcommand*{\xingsocialsymbol}    {\textbf{xi}~}
-\renewcommand*{\twittersocialsymbol} {\textbf{tw}~}
-\renewcommand*{\githubsocialsymbol}  {\textbf{gh}~}
-\renewcommand*{\gitlabsocialsymbol}  {\textbf{gl}~}
-\renewcommand*{\skypesocialsymbol}   {\textbf{sk}~}
+\renewcommand*{\mobilephonesymbol}   {\ifinfoiconbold{\bfseries {\hbox to 1.1em{\textbf{M}}~}  }\else{\hbox to 1.1em{M}}~\fi}% 1em is the width of the M capital in most fonts
+\renewcommand*{\fixedphonesymbol}    {\ifinfoiconbold{\bfseries {\hbox to 1.1em{\textbf{T}}~}  }\else{\hbox to 1.1em{T}}~\fi}
+\renewcommand*{\faxphonesymbol}      {\ifinfoiconbold{\bfseries {\hbox to 1.1em{\textbf{F}}~}  }\else{\hbox to 1.1em{F}}~\fi}
+\renewcommand*{\emailsymbol}         {\ifinfoiconbold{\bfseries {\hbox to 1.1em{\textbf{E}}~}  }\else{\hbox to 1.1em{E}}~\fi}
+\renewcommand*{\homepagesymbol}      {\ifinfoiconbold{\bfseries {\hbox to 1.1em{\textbf{W}}~}  }\else{\hbox to 1.1em{W}}~\fi}
+\renewcommand*{\linkedinsocialsymbol}{\ifinfoiconbold{\bfseries {\hbox to 1.1em{\textbf{in}}~} }\else{\hbox to 1.1em{in}}~\fi}
+\renewcommand*{\twittersocialsymbol} {\ifinfoiconbold{\bfseries {\hbox to 1.1em{\textbf{tw}}~} }\else{\hbox to 1.1em{tw}}~\fi}
+\renewcommand*{\githubsocialsymbol}  {\ifinfoiconbold{\bfseries {\hbox to 1.1em{\textbf{gh}}~} }\else{\hbox to 1.1em{gh}}~\fi}
+\renewcommand*{\xingsocialsymbol}    {\ifinfoiconbold{\bfseries {\hbox to 1.1em{\textbf{xi}}~} }\else{\hbox to 1.1em{xi}}~\fi}
+\renewcommand*{\gitlabsocialsymbol}  {\ifinfoiconbold{\bfseries {\hbox to 1.1em{\textbf{gl}}~} }\else{\hbox to 1.1em{gl}}~\fi}
+\renewcommand*{\skypesocialsymbol}   {\ifinfoiconbold{\bfseries {\hbox to 1.1em{\textbf{sk}}~} }\else{\hbox to 1.1em{sk}}~\fi}
 
 \renewcommand*{\listitemsymbol}      {\labelitemi~}
 

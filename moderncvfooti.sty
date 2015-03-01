@@ -87,11 +87,11 @@
           \flushfoot\@firstfootelementtrue\\}%
         \collectionloop{phones}{% the key holds the phone type (=symbol command prefix), the item holds the number
           \addtofoot{\csname\collectionloopkey phonesymbol\endcsname\collectionloopitem}}%
-        \ifthenelse{\isundefined{\@email}}{}{\addtofoot{\emailsymbol\emaillink{\@email}}}%
+          \ifthenelse{\isundefined{\@email}}{}{\addtofoot{\emailsymbol{\ifinfotextbold{\bfseries \emaillink{\@email} }\else{\emaillink{\@email} }\fi}}}%
         \ifthenelse{\isundefined{\@homepage}}{}{%
-          \ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
-          {\addtofoot{\homepagesymbol\httplink{\@homepage}}}%
-          {\addtofoot{\homepagesymbol\httplink[\@homepagetitle]{\@homepage}}}}%
+        \ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
+          {\addtofoot{\homepagesymbol{\ifinfotextbold{\bfseries \httplink{\@homepage} }\else{\httplink{\@homepage} }\fi}}}%
+          {\addtofoot{\homepagesymbol{\ifinfotextbold{\bfseries \httplink[\@homepagetitle]{\@homepage} }\else{\httplink[\@homepagetitle]{\@homepage} }\fi}}}}% 
         \collectionloop{socials}{% the key holds the social type (=symbol command prefix), the item holds the link
           \addtofoot{\csname\collectionloopkey socialsymbol\endcsname\collectionloopitem}}%
         \ifthenelse{\isundefined{\@extrainfo}}{}{\addtofoot{\@extrainfo}}%
@@ -121,11 +121,11 @@
           \flushfoot\@firstfootelementtrue\\}%
         \collectionloop{phones}{% the key holds the phone type (=symbol command prefix), the item holds the number
           \addtofoot{\csname\collectionloopkey phonesymbol\endcsname\collectionloopitem}}%
-        \ifthenelse{\isundefined{\@email}}{}{\addtofoot{\emailsymbol\emaillink{\@email}}}%
+          \ifthenelse{\isundefined{\@email}}{}{\addtofoot{\emailsymbol{\ifinfotextbold{\bfseries \emaillink{\@email} }\else{\emaillink{\@email} }\fi}}}%
         \ifthenelse{\isundefined{\@homepage}}{}{%
-          \ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
-          {\addtofoot{\homepagesymbol\httplink{\@homepage}}}%
-          {\addtofoot{\homepagesymbol\httplink[\@homepagetitle]{\@homepage}}}}%
+        \ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
+          {\addtofoot{\homepagesymbol{\ifinfotextbold{\bfseries \httplink{\@homepage} }\else{\httplink{\@homepage} }\fi}}}%
+          {\addtofoot{\homepagesymbol{\ifinfotextbold{\bfseries \httplink[\@homepagetitle]{\@homepage} }\else{\httplink[\@homepagetitle]{\@homepage} }\fi}}}}% 
         \collectionloop{socials}{% the key holds the social type (=symbol command prefix), the item holds the link
           \addtofoot{\csname\collectionloopkey socialsymbol\endcsname\collectionloopitem}}%
         \ifthenelse{\isundefined{\@extrainfo}}{}{\addtofoot{\@extrainfo}}%
