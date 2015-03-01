@@ -86,6 +86,7 @@
             {\makenewline{\homepagesymbol{\ifinfotextbold{\bfseries \httplink[\@homepagetitle]{\@homepage} }\else{\httplink[\@homepagetitle]{\@homepage} }\fi}}}}
         \socialsdetails% needs to be pre-rendered as loops and tabulars seem to conflict
         \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}%
+        \ifthenelse{\isundefined{\@dateinfo}}{}{\makenewline{\@dateinfo}}%
       \end{tabular}
     }\fi%
   % optional photo (pre-rendering)
@@ -166,6 +167,7 @@
           {\makenewline{\homepagesymbol{\ifinfotextbold{\bfseries \httplink{\@homepage} }\else{\httplink{\@homepage} }\fi}}}%
           {\makenewline{\homepagesymbol{\ifinfotextbold{\bfseries \httplink[\@homepagetitle]{\@homepage} }\else{\httplink[\@homepagetitle]{\@homepage} }\fi}}}}
         \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}}\fi%
+        \ifthenelse{\isundefined{\@dateinfo}}{}{\makenewline{\@dateinfo}}%
     \end{minipage}\\[1em]
   % recipient block
   \begin{minipage}[t]{.5\textwidth}
