@@ -109,8 +109,11 @@
         \ifthenelse{\equal{\@addresscountry}{}}{}{\makenewline\@addresscountry}}%
       \collectionloop{phones}{% the key holds the phone type (=symbol command prefix), the item holds the number
         \makenewline\hbox to 1.0em{\csname\collectionloopkey phonesymbol\endcsname}~\collectionloopitem}%
-      \ifthenelse{\isundefined{\@email}}{}{\makenewline\hbox to 1.0em{\emailsymbol}~\emaillink{\@email}}%
-      \ifthenelse{\isundefined{\@homepage}}{}{\makenewline\hbox to 1.0em{\homepagesymbol}~\httplink{\@homepage}}%
+      \ifthenelse{\isundefined{\@email}}{}{\makenewline\hbox to 1.0em{\emailsymbol{\ifinfotextbold{\bfseries \emaillink{\@email} }\else{\emaillink{\@email} }\fi}}}%
+      \ifthenelse{\isundefined{\@homepage}}{}{%
+        \ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
+        {\makenewline\hbox to 1.0em{{\ifinfotextbold{\bfseries \homepagesymbol\httplink{\@homepage}}\else{\homepagesymbol\httplink{\@homepage}}\fi}}}%
+        {\makenewline\hbox to 1.0em{{\ifinfotextbold{\bfseries \homepagesymbol\httplink[\@homepagetitle]{\@homepage}}\else{\homepagesymbol\httplink{\@homepage}}\fi}}}}% 
       \collectionloop{socials}{% the key holds the social type (=symbol command prefix), the item holds the link
         \makenewline\hbox to 1.0em{\csname\collectionloopkey socialsymbol\endcsname}~\collectionloopitem}%
       \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}}\fi}
@@ -155,8 +158,11 @@
           \ifthenelse{\equal{\@addresscountry}{}}{}{\makenewline\@addresscountry}}%
         \collectionloop{phones}{% the key holds the phone type (=symbol command prefix), the item holds the number
           \makenewline\hbox to 1.0em{\csname\collectionloopkey phonesymbol\endcsname}~\collectionloopitem}%
-        \ifthenelse{\isundefined{\@email}}{}{\makenewline\hbox to 1.0em{\emailsymbol}~\emaillink{\@email}}%
-        \ifthenelse{\isundefined{\@homepage}}{}{\makenewline\hbox to 1.0em{\homepagesymbol}~\httplink{\@homepage}}%
+        \ifthenelse{\isundefined{\@email}}{}{\makenewline\hbox to 1.0em{\emailsymbol{\ifinfotextbold{\bfseries \emaillink{\@email} }\else{\emaillink{\@email} }\fi}}}%
+        \ifthenelse{\isundefined{\@homepage}}{}{%
+          \ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
+            {\makenewline\hbox to 1.0em{{\ifinfotextbold{\bfseries \homepagesymbol\httplink{\@homepage}}\else{\homepagesymbol\httplink{\@homepage}}\fi}}}%
+            {\makenewline\hbox to 1.0em{{\ifinfotextbold{\bfseries \homepagesymbol\httplink[\@homepagetitle]{\@homepage}}\else{\homepagesymbol\httplink{\@homepage}}\fi}}}}% 
         \collectionloop{socials}{% the key holds the social type (=symbol command prefix), the item holds the link
           \makenewline\hbox to 1.0em{\csname\collectionloopkey socialsymbol\endcsname}~\collectionloopitem}%
         \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}}}%

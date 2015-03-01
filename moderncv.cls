@@ -242,7 +242,7 @@
 
 % defines one's home page (optional)
 % usage: \homepage{<url>}
-\newcommand*{\homepage}[1]{\def\@homepage{#1}}
+\newcommand*{\homepage}[2]{\def\@homepage{#1}\def\@homepagetitle{#2}}
 
 % adds a fixed/mobile/fax number to one's personal information (optional)
 % usage: \phone[<optional type>]{<number>}
