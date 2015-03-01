@@ -25,7 +25,6 @@
   \renewcommand*{\marvosymbol}[1]{{\fontfamily{mvs}\fontencoding{U}\fontseries{m}\fontshape{n}\selectfont\char#1}}
 %\fi
 
-
 %-------------------------------------------------------------------------------
 %                symbols definition
 %-------------------------------------------------------------------------------
@@ -35,14 +34,14 @@
 %\renewcommand*{\labelitemiv}         {\labelitemiii}                                         % no change from default in moderncv.cls
 
 \renewcommand*{\addresssymbol}       {}
-\renewcommand*{\mobilephonesymbol}   {{mobile }}
-\renewcommand*{\fixedphonesymbol}    {\ifinfoiconbold{\bfseries}\fi{phone }}
-\renewcommand*{\faxphonesymbol}      {\ifinfoiconbold{\bfseries}\fi{fax }}
-\renewcommand*{\emailsymbol}         {\ifinfoiconbold{\bfseries}\fi{email }}
-\renewcommand*{\homepagesymbol}      {\ifinfoiconbold{\bfseries}\fi{web }}
-\renewcommand*{\linkedinsocialsymbol}{\ifinfoiconbold{\bfseries}\fi{linkedin }}
-\renewcommand*{\twittersocialsymbol} {\ifinfoiconbold{\bfseries}\fi{twitter }}
-\renewcommand*{\githubsocialsymbol}  {\ifinfoiconbold{\bfseries}\fi{github }}
+\renewcommand*{\mobilephonesymbol}   {\ifinfoiconbold{\bfseries mobile }\else{mobile }\fi}
+\renewcommand*{\fixedphonesymbol}    {\ifinfoiconbold{\bfseries phone }\else{phone }\fi}
+\renewcommand*{\faxphonesymbol}      {\ifinfoiconbold{\bfseries fax }\else{fax }\fi}
+\renewcommand*{\emailsymbol}         {\ifinfoiconbold{\bfseries email }\else{email }\fi}
+\renewcommand*{\homepagesymbol}      {\ifinfoiconbold{\bfseries web }\else{web }\fi}
+\renewcommand*{\linkedinsocialsymbol}{\ifinfoiconbold{\bfseries linkedin }\else{linkedin }\fi}
+\renewcommand*{\twittersocialsymbol} {\ifinfoiconbold{\bfseries twitter }\else{twitter }\fi}
+\renewcommand*{\githubsocialsymbol}  {\ifinfoiconbold{\bfseries github }\else{github }\fi}
 
 \renewcommand*{\listitemsymbol}      {\labelitemi~}
 
