@@ -139,7 +139,7 @@
     pdfauthor     = {\@firstname{}~\@lastname{}},
     pdftitle      = {\@firstname{}~\@lastname{}\notblank{\@title}{ -- \@title}{}},
     pdfsubject    = {Resum\'{e} of \@firstname{}~\@lastname{}},
-    pdfkeywords   = {\@firstname{}~\@lastname{}, curriculum vit\ae{}, resum\'{e}}}}
+    pdfkeywords   = {\@firstname{}~\@lastname{}, curriculum vit\ae{}, curriculum vitae, resume, résumé, resum\'{e}}}}
 
 % graphics
 \RequirePackage{graphicx}
