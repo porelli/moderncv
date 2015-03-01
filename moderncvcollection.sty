@@ -47,7 +47,8 @@
 % usage: \collectiongetitem{<collection name>}{<element id>}
 % where <element id> is an integer between 0 and (collectioncount-1)
 \newcommand*{\collectiongetitem}[2]{%
-  \csname collection@#1@item\romannumeral #2\endcsname}
+  {\ifinfotextbold{\bfseries \csname collection@#1@item\romannumeral #2\endcsname}\else{
+  \csname collection@#1@item\romannumeral #2\endcsname}\fi}}
 
 % gets a key from a collection
 % usage: \collectiongetkey{<collection name>}{<element id>}

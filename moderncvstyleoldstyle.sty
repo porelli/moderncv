@@ -144,11 +144,11 @@
       \ifthenelse{\equal{\@addresscountry}{}}{}{\makenewline\@addresscountry}}%
     \collectionloop{phones}{% the key holds the phone type (=symbol command prefix), the item holds the number
       \makenewline\csname\collectionloopkey phonesymbol\endcsname\collectionloopitem}%
-    \ifthenelse{\isundefined{\@email}}{}{\makenewline\emailsymbol\emaillink{\@email}}%
-    \ifthenelse{\isundefined{\@homepage}}{}{%
-	\ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
-	{\makenewline\homepagesymbol\httplink{\@homepage}}%
-	{\makenewline\homepagesymbol\httplink[\@homepagetitle]{\@homepage}}}% 
+    \ifthenelse{\isundefined{\@email}}{}{\makenewline\emailsymbol{\ifinfotextbold{\bfseries \emaillink{\@email} }\else{\emaillink{\@email} }\fi}}%
+        \ifthenelse{\isundefined{\@homepage}}{}{%
+          \ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
+            {\addtofooter{\homepagesymbol{\ifinfotextbold{\bfseries \httplink{\@homepage} }\else{\httplink{\@homepage} }\fi}}}%
+            {\addtofooter{\homepagesymbol{\ifinfotextbold{\bfseries \httplink[\@homepagetitle]{\@homepage} }\else{\httplink[\@homepagetitle]{\@homepage} }\fi}}}}% 
     \collectionloop{socials}{% the key holds the social type (=symbol command prefix), the item holds the link
       \makenewline\csname\collectionloopkey socialsymbol\endcsname\collectionloopitem}%
     \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}}}
@@ -289,7 +289,7 @@
         \ifthenelse{\equal{\@addresscountry}{}}{}{\makenewline\@addresscountry}}%
       \collectionloop{phones}{% the key holds the phone type (=symbol command prefix), the item holds the number
         \makenewline\csname\collectionloopkey phonesymbol\endcsname\collectionloopitem}%
-      \ifthenelse{\isundefined{\@email}}{}{\makenewline\emailsymbol\emaillink{\@email}}%
+      \ifthenelse{\isundefined{\@email}}{}{\makenewline\emailsymbol{\ifinfotextbold{\bfseries \emaillink{\@email} }\else{\emaillink{\@email} }\fi}}%
       \ifthenelse{\isundefined{\@homepage}}{}{%
 	\ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
 	{\makenewline\homepagesymbol\httplink{\@homepage}}%
