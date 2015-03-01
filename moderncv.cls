@@ -117,13 +117,8 @@
     pdfauthor     = {\@firstname{}~\@lastname{}},
     pdftitle      =
     {\@firstname{}~\@lastname{}\expandafter\notblank\expandafter{\@title}{ -- \@title}{}},  %\notblank does not expand argument automatically
-    pdfsubject    = {R\'{e}sum\'{e} of \@firstname{}~\@lastname{}},
-    pdfkeywords   = {\@firstname{}~\@lastname{}, curriculum vit\ae{}, r\'{e}sum\'{e}}}}
-
-% pdftex not using pdfmanagement-testphase requires T1 font encoding in order to handle links containing special characters somewhat properly
-\ifpdftex
-  \IfPDFManagementActiveTF{}{\RequirePackage[T1]{fontenc}}
-\fi
+    pdfsubject    = {Resum\'{e} of \@firstname{}~\@lastname{}},
+    pdfkeywords   = {\@firstname{}~\@lastname{}, curriculum vit\ae{}, curriculum vitae, resume, résumé, resum\'{e}}}}
 
 % graphics
 \RequirePackage{graphicx}
