@@ -119,6 +119,7 @@
 	\collectionloop{socials}{% the key holds the social type (=symbol command prefix), the item holds the link
           \addtofooter{\csname\collectionloopkey socialsymbol\endcsname\collectionloopitem}}%
         \ifthenelse{\isundefined{\@extrainfo}}{}{\addtofooter{\@extrainfo}}%
+        \ifthenelse{\isundefined{\@dateinfo}}{}{\addtofooter{\@dateinfo}}%
         \ifthenelse{\lengthtest{\footerboxwidth=0pt}}{}{\flushfooter}% the lengthtest is required to avoid flushing an empty footer, which could cause a blank line due to the \\ after the address, if no other personal info is used
         }}}%
   \pagestyle{plain}}
@@ -174,6 +175,7 @@
         \collectionloop{socials}{% the key holds the social type (=symbol command prefix), the item holds the link
           \addtofooter{\csname\collectionloopkey socialsymbol\endcsname\collectionloopitem}}%
         \ifthenelse{\isundefined{\@extrainfo}}{}{\addtofooter{\@extrainfo}}%
+        \ifthenelse{\isundefined{\@dateinfo}}{}{\addtofooter{\@dateinfo}}%
         \ifthenelse{\lengthtest{\footerboxwidth=0pt}}{}{\flushfooter}% the lengthtest is required to avoid flushing an empty footer, which could cause a blank line due to the \\ after the address, if no other personal info is used
         }}}%
   \pagestyle{plain}}

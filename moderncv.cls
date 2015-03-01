@@ -347,6 +347,7 @@
 %                resume design commands definitions
 %-------------------------------------------------------------------------------
 % elements
+\newcommand*{\dateinfo}[1]{\def\@dateinfo{#1}}
 % defines one's picture (optional)
 % usage: photo[<picture width>][<picture frame thickness>]{<picture filename>}
 \NewDocumentCommand{\photo}{O{64pt}O{0.4pt}m}{\def\@photowidth{#1}\def\@photoframewidth{#2}\def\@photo{#3}}
