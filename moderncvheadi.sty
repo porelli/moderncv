@@ -88,8 +88,10 @@
         \ifthenelse{\isundefined{\@email}}{}{\makenewline{\emailsymbol{\ifinfotextbold{\bfseries \emaillink{\@email} }\else{\emaillink{\@email} }\fi}}}%
         \ifthenelse{\isundefined{\@homepage}}{}{%
           \ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
-            {\makenewline{\homepagesymbol{\ifinfotextbold{\bfseries \httpslink{\@homepage} }\else{\httpslink{\@homepage} }\fi}}}%
-            {\makenewline{\homepagesymbol{\ifinfotextbold{\bfseries \httpslink[\@homepagetitle]{\@homepage} }\else{\httpslink[\@homepagetitle]{\@homepage} }\fi}}}}
+          {\makenewline{\homepagesymbol
+            \ifthenelse{\equal{\@homepageprotocol}{http}}{\ifinfotextbold{\bfseries \httplink{\@homepage} }\else{\httplink{\@homepage} }\fi}}{\ifinfotextbold{\bfseries \httpslink{\@homepage} }\else{\httpslink{\@homepage} }\fi}}}%
+          {\makenewline{\homepagesymbol
+            \ifthenelse{\equal{\@homepageprotocol}{http}}{\ifinfotextbold{\bfseries \httplink[\@homepagetitle]{\@homepage} }\else{\httplink[\@homepagetitle]{\@homepage} }\fi}{\ifinfotextbold{\bfseries \httpslink[\@homepagetitle]{\@homepage} }\else{\httpslink[\@homepagetitle]{\@homepage} }\fi}}}}%
         \socialsdetails% needs to be pre-rendered as loops and tabulars seem to conflict
         \ifthenelse{\isundefined{\@work}}{}{\makenewline{\worksymbol{\ifinfotextbold{\bfseries \@work}\else{\@work}\fi}}}%
         \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}%
@@ -182,12 +184,10 @@
         \ifthenelse{\isundefined{\@email}}{}{\makenewline{\emailsymbol{\ifinfotextbold{\bfseries \emaillink{\@email} }\else{\emaillink{\@email} }\fi}}}%
         \ifthenelse{\isundefined{\@homepage}}{}{%
           \ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
-          {\makenewline{\homepagesymbol{\ifinfotextbold{\bfseries \httpslink{\@homepage} }\else{\httpslink{\@homepage} }\fi}}}%
-          {\makenewline{\homepagesymbol{\ifinfotextbold{\bfseries \httpslink[\@homepagetitle]{\@homepage} }\else{\httpslink[\@homepagetitle]{\@homepage} }\fi}}}}
-        \ifthenelse{\isundefined{\@work}}{}{\makenewline{\worksymbol{\ifinfotextbold{\bfseries \@work}\else{\@work}\fi}}}%
-        \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}}\fi%
-        \ifthenelse{\isundefined{\@dateinfo}}{}{\makenewline{\@dateinfo}}%
-    \end{minipage}\\[1em]
+          {\makenewline{\homepagesymbol
+            \ifthenelse{\equal{\@homepageprotocol}{http}}{\ifinfotextbold{\bfseries \httplink{\@homepage} }\else{\httplink{\@homepage} }\fi}}{\ifinfotextbold{\bfseries \httpslink{\@homepage} }\else{\httpslink{\@homepage} }\fi}}}%
+          {\makenewline{\homepagesymbol
+            \ifthenelse{\equal{\@homepageprotocol}{http}}{\ifinfotextbold{\bfseries \httplink[\@homepagetitle]{\@homepage} }\else{\httplink[\@homepagetitle]{\@homepage} }\fi}{\ifinfotextbold{\bfseries \httpslink[\@homepagetitle]{\@homepage} }\else{\httpslink[\@homepagetitle]{\@homepage} }\fi}}}}%
   % recipient block
   \begin{minipage}[t]{.5\textwidth}
     \raggedright%

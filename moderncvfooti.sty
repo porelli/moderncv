@@ -91,8 +91,10 @@
         \ifthenelse{\isundefined{\@email}}{}{\addtofoot{\emailsymbol{\ifinfotextbold{\bfseries \emaillink{\@email} }\else{\emaillink{\@email} }\fi}}}%
         \ifthenelse{\isundefined{\@homepage}}{}{%
           \ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
-            {\addtofoot{\homepagesymbol{\ifinfotextbold{\bfseries \httpslink{\@homepage} }\else{\httpslink{\@homepage} }\fi}}}%
-            {\addtofoot{\homepagesymbol{\ifinfotextbold{\bfseries \httpslink[\@homepagetitle]{\@homepage} }\else{\httpslink[\@homepagetitle]{\@homepage} }\fi}}}}% 
+          {\addtofoot{\homepagesymbol
+            \ifthenelse{\equal{\@homepageprotocol}{http}}{\ifinfotextbold{\bfseries \httplink{\@homepage} }\else{\httplink{\@homepage} }\fi}}{\ifinfotextbold{\bfseries \httpslink{\@homepage} }\else{\httpslink{\@homepage} }\fi}}}%
+          {\addtofoot{\homepagesymbol
+            \ifthenelse{\equal{\@homepageprotocol}{http}}{\ifinfotextbold{\bfseries \httplink[\@homepagetitle]{\@homepage} }\else{\httplink[\@homepagetitle]{\@homepage} }\fi}{\ifinfotextbold{\bfseries \httpslink[\@homepagetitle]{\@homepage} }\else{\httpslink[\@homepagetitle]{\@homepage} }\fi}}}}%
         \collectionloop{socials}{% the key holds the social type (=symbol command prefix), the item holds the link
           \addtofoot{\csname\collectionloopkey socialsymbol\endcsname\collectionloopitem}}%
         \ifthenelse{\isundefined{\@work}}{}{\addtofoot{\worksymbol{\ifinfotextbold{\bfseries \@work}\else{\@work}\fi}}}%
@@ -128,8 +130,10 @@
         \ifthenelse{\isundefined{\@email}}{}{\addtofoot{\emailsymbol{\ifinfotextbold{\bfseries \emaillink{\@email} }\else{\emaillink{\@email} }\fi}}}%
         \ifthenelse{\isundefined{\@homepage}}{}{%
           \ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
-            {\addtofoot{\homepagesymbol{\ifinfotextbold{\bfseries \httpslink{\@homepage} }\else{\httpslink{\@homepage} }\fi}}}%
-            {\addtofoot{\homepagesymbol{\ifinfotextbold{\bfseries \httpslink[\@homepagetitle]{\@homepage} }\else{\httpslink[\@homepagetitle]{\@homepage} }\fi}}}}% 
+          {\addtofoot{\homepagesymbol
+            \ifthenelse{\equal{\@homepageprotocol}{http}}{\ifinfotextbold{\bfseries \httplink{\@homepage} }\else{\httplink{\@homepage} }\fi}}{\ifinfotextbold{\bfseries \httpslink{\@homepage} }\else{\httpslink{\@homepage} }\fi}}}%
+          {\addtofoot{\homepagesymbol
+            \ifthenelse{\equal{\@homepageprotocol}{http}}{\ifinfotextbold{\bfseries \httplink[\@homepagetitle]{\@homepage} }\else{\httplink[\@homepagetitle]{\@homepage} }\fi}{\ifinfotextbold{\bfseries \httpslink[\@homepagetitle]{\@homepage} }\else{\httpslink[\@homepagetitle]{\@homepage} }\fi}}}}%
         \collectionloop{socials}{% the key holds the social type (=symbol command prefix), the item holds the link
           \addtofoot{\csname\collectionloopkey socialsymbol\endcsname\collectionloopitem}}%
         \ifthenelse{\isundefined{\@work}}{}{\addtofoot{\worksymbol{\ifinfotextbold{\bfseries \@work}\else{\@work}\fi}}}%

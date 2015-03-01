@@ -247,8 +247,9 @@
 \newcommand*{\email}[1]{\def\@email{#1}}
 
 % defines one's home page (optional)
-% usage: \homepage{<url>}{title}
-\newcommand*{\homepage}[2]{\def\@homepage{#1}\def\@homepagetitle{#2}}
+% usage: \homepage[<optional protocol>]{<url>}{title}
+% where <optional protocol> should be either "https" (default) or "http"
+\NewDocumentCommand{\homepage}{O{https}mG{}}{\def\@homepageprotocol{#1}\def\@homepage{#2}\def\@homepagetitle{#3}}
 
 % adds a fixed/mobile/fax number to one's personal information (optional)
 % usage: \phone[<optional type>]{<number>}
