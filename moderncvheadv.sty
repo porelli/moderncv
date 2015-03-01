@@ -84,15 +84,21 @@
         \ifthenelse{\isundefined{\@born}}{}{\makenewline\bornsymbol~\@born}%
         \collectionloop{phones}{% the key holds the phone type (=symbol command prefix), the item holds the number
           \makenewline\csname\collectionloopkey phonesymbol\endcsname~\collectionloopitem}%
-        \ifthenelse{\isundefined{\@email}}{}{\makenewline{\emailsymbol{\ifinfotextbold{\bfseries \emaillink{\@email} }\else{\emaillink{\@email} }\fi}}}%
+        \ifthenelse{\isundefined{\@email}}{}{\makenewline{\emailsymbol~{\ifinfotextbold{\bfseries \emaillink{\@email} }\else{\emaillink{\@email} }\fi}}}%
         \ifthenelse{\isundefined{\@homepage}}{}{%
           \ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
-          {\makenewline{{\ifinfotextbold{\bfseries \homepagesymbol
-          \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink{\@homepage}}{\httpslink{\@homepage}}}
-            \else{\homepagesymbol\ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink{\@homepage}}{\httpslink{\@homepage}}}\fi}}}%
-          {\makenewline{{\ifinfotextbold{\bfseries \homepagesymbol
-            \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink[\@homepagetitle]{\@homepage}}{\httpslink[\@homepagetitle]{\@homepage}}}
-              \else{\homepagesymbol\ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink[\@homepagetitle]{\@homepage}}{\httpslink[\@homepagetitle]{\@homepage}}}\fi}}}}%
+            {\makenewline{\homepagesymbol{
+              \ifinfotextbold{
+                \bfseries 
+                  \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink{\@homepage}}{\httpslink{\@homepage}} }
+              \else{
+                \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink{\@homepage}}{\httpslink{\@homepage}}}\fi}}}%
+            {\makenewline{\homepagesymbol{
+              \ifinfotextbold{
+                \bfseries
+                  \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink[\@homepagetitle]{\@homepage}}{\httpslink[\@homepagetitle]{\@homepage}} }
+              \else{
+                \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink[\@homepagetitle]{\@homepage}}{\httpslink[\@homepagetitle]{\@homepage}} }\fi}}}}% 
         \collectionloop{socials}{% the key holds the social type (=symbol command prefix), the item holds the link
           \makenewline\csname\collectionloopkey socialsymbol\endcsname~\collectionloopitem}%
         \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}\fi}%
@@ -166,12 +172,18 @@
         \ifthenelse{\isundefined{\@email}}{}{\makenewline{\emailsymbol{\ifinfotextbold{\bfseries \emaillink{\@email} }\else{\emaillink{\@email} }\fi}}}%
         \ifthenelse{\isundefined{\@homepage}}{}{%
           \ifthenelse{\equal{\@homepagetitle}{}}% \homepagetitle could be empty
-          {\makenewline{{\ifinfotextbold{\bfseries \homepagesymbol
-            \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink{\@homepage}}{\httpslink{\@homepage}}}
-              \else{\homepagesymbol\ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink{\@homepage}}{\httpslink{\@homepage}}}\fi}}}%
-          {\makenewline{{\ifinfotextbold{\bfseries \homepagesymbol
-            \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink[\@homepagetitle]{\@homepage}}{\httpslink[\@homepagetitle]{\@homepage}}}
-              \else{\homepagesymbol\ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink[\@homepagetitle]{\@homepage}}{\httpslink[\@homepagetitle]{\@homepage}}}\fi}}}}%
+            {\makenewline{\homepagesymbol{
+              \ifinfotextbold{
+                \bfseries 
+                  \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink{\@homepage}}{\httpslink{\@homepage}} }
+              \else{
+                \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink{\@homepage}}{\httpslink{\@homepage}}}\fi}}}%
+            {\makenewline{\homepagesymbol{
+              \ifinfotextbold{
+                \bfseries
+                  \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink[\@homepagetitle]{\@homepage}}{\httpslink[\@homepagetitle]{\@homepage}} }
+              \else{
+                \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink[\@homepagetitle]{\@homepage}}{\httpslink[\@homepagetitle]{\@homepage}} }\fi}}}}% 
         \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}}\fi%
     \end{minipage}\\[2em]
   % recipient block
