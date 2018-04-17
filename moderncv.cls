@@ -258,6 +258,10 @@
 % where the <city> and <country> arguments can be omitted or provided empty
 \NewDocumentCommand{\address}{mG{}G{}}{\def\@addressstreet{#1}\def\@addresscity{#2}\def\@addresscountry{#3}}
 
+% defines one's birthday (optional)
+% usage: \born{date, place}
+\newcommand*{\born}[1]{\def\@born{#1}}
+
 % defines one's email (optional)
 % usage: \email{<email address>}
 \newcommand*{\email}[1]{\def\@email{#1}}
@@ -339,6 +343,7 @@
 % other symbols
 \newcommand*{\listitemsymbol}      {\labelitemi~}
 \newcommand*{\addresssymbol}       {}
+\newcommand*{\bornsymbol}          {}
 \newcommand*{\mobilephonesymbol}   {}
 \newcommand*{\fixedphonesymbol}    {}
 \newcommand*{\faxphonesymbol}      {}
@@ -400,7 +405,7 @@
 % usage: \moderncvfoot[<optional foot option>]{<foot variant number>}
 \newcommand*{\moderncvfoot}[2][]{%
   \@loadmoderncvpackage[#1]{foot}{#2}}
-  
+
 % loads a color scheme
 % usage: \moderncvcolor{<color scheme name>}
 \newcommand*{\moderncvcolor}[1]{%
