@@ -102,6 +102,7 @@
     \xetexorluatextrue
   \else
     \xetexorluatexfalse
+    \ClassWarningNoLine{moderncv}{"academicons requires xetex/luatex to work. Not all social icons might work properly."}
   \fi
 \fi
 
