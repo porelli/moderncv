@@ -268,6 +268,7 @@
       \ifthenelse{\equal{#1}{linkedin}}     {\collectionadd[linkedin]{socials}     {\protect\httpslink[#3]{www.linkedin.com/in/#3}}}               {}%
       \ifthenelse{\equal{#1}{xing}}         {\collectionadd[xing]{socials}         {\protect\httpslink[#3]{www.xing.com/profile/#3}}}              {}%
       \ifthenelse{\equal{#1}{twitter}}      {\collectionadd[twitter]{socials}      {\protect\httpslink[#3]{twitter.com/#3}}}                       {}%
+      \ifthenelse{\equal{#1}{mastodon}}     {\collectionadd[mastodon]{socials}     {\protect\httpslink[#3]{#3}}}                                   {}%
       \ifthenelse{\equal{#1}{github}}       {\collectionadd[github]{socials}       {\protect\httpslink[#3]{github.com/#3}}}                        {}%
       \ifthenelse{\equal{#1}{gitlab}}       {\collectionadd[gitlab]{socials}       {\protect\httpslink[#3]{gitlab.com/#3}}}                        {}%
       \ifthenelse{\equal{#1}{stackoverflow}}{\collectionadd[stackoverflow]{socials}{\protect\httpslink[#3]{stackoverflow.com/users/#3}}}           {}%
@@ -280,7 +281,8 @@
       \ifthenelse{\equal{#1}{whatsapp}}     {\collectionadd[whatsapp]{socials}     {\protect\httpslink[#3]{wa.me/#3}}}                             {}%
       \ifthenelse{\equal{#1}{signal}}       {\collectionadd[signal]{socials}       {#3}}                                                           {}%
       \ifthenelse{\equal{#1}{matrix}}       {\collectionadd[matrix]{socials}       {\httpslink[#3]{matrix.to/\#/#3}}}                              {}%
-      \ifthenelse{\equal{#1}{googlescholar}}{\collectionadd[googlescholar]{socials}{\protect\httpslink[#3]{scholar.google.com/citations?user=#3}}} {}%                        {}%
+      \ifthenelse{\equal{#1}{googlescholar}}{\collectionadd[googlescholar]{socials}{\protect\httpslink[#3]{scholar.google.com/citations?user=#3}}} {}%
+      \ifthenelse{\equal{#1}{codeberg}}     {\collectionadd[codeberg]{socials}     {\protect\httpslink[#3]{codeberg.org/#3}}}                      {}%
       }
     {\collectionadd[#1]{socials}{\protect\httpslink[#3]{#2}}}}%
 
@@ -314,20 +316,21 @@
 \renewcommand{\theenumiv}          {\@Alph\c@enumiv}
 
 % other symbols
-\newcommand*{\listitemsymbol}      {\labelitemi~}
-\newcommand*{\addresssymbol}       {}
-\newcommand*{\bornsymbol}          {}
-\newcommand*{\mobilephonesymbol}   {}
-\newcommand*{\fixedphonesymbol}    {}
-\newcommand*{\faxphonesymbol}      {}
-\newcommand*{\emailsymbol}         {}
-\newcommand*{\homepagesymbol}      {}
-\newcommand*{\linkedinsocialsymbol}{}
-\newcommand*{\xingsocialsymbol}    {}
-\newcommand*{\twittersocialsymbol} {}
-\newcommand*{\githubsocialsymbol}  {}
-\newcommand*{\gitlabsocialsymbol}  {}
-\newcommand*{\skypesocialsymbol}   {}
+\newcommand*{\listitemsymbol}           {\labelitemi~}
+\newcommand*{\addresssymbol}            {}
+\newcommand*{\bornsymbol}               {}
+\newcommand*{\mobilephonesymbol}        {}
+\newcommand*{\fixedphonesymbol}         {}
+\newcommand*{\faxphonesymbol}           {}
+\newcommand*{\emailsymbol}              {}
+\newcommand*{\homepagesymbol}           {}
+\newcommand*{\linkedinsocialsymbol}     {}
+\newcommand*{\xingsocialsymbol}         {}
+\newcommand*{\twittersocialsymbol}      {}
+\newcommand*{\mastodonsocialsymbol}     {}
+\newcommand*{\githubsocialsymbol}       {}
+\newcommand*{\gitlabsocialsymbol}       {}
+\newcommand*{\skypesocialsymbol}        {}
 \newcommand*{\stackoverflowsocialsymbol}{}
 \newcommand*{\bitbucketsocialsymbol}    {}
 \newcommand*{\skypesocialsymbol}        {}
@@ -339,7 +342,8 @@
 \newcommand*{\whatsappsocialsymbol}     {}
 \newcommand*{\matrixsocialsymbol}       {}
 \newcommand*{\signalsocialsymbol}       {}
-\newcommand*{\worksymbol}          {}
+\newcommand*{\codebergsocialsymbol}     {}
+\newcommand*{\worksymbol}               {}
 
 % other
 %------
