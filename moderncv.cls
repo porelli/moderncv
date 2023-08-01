@@ -377,7 +377,6 @@
 \newcommand*{\gitlabsocialsymbol}       {}
 \newcommand*{\stackoverflowsocialsymbol}{}
 \newcommand*{\bitbucketsocialsymbol}    {}
-\newcommand*{\skypesocialsymbol}        {}
 \newcommand*{\orcidsocialsymbol}        {}
 \newcommand*{\researchgatesocialsymbol} {}
 \newcommand*{\researcheridsocialsymbol} {}
@@ -399,6 +398,7 @@
 \newcommand*{\battlenetsocialsymbol}    {}
 \newcommand*{\arxivsocialsymbol}        {}
 \newcommand*{\inspiresocialsymbol}      {}
+\newcommand*{\worksymbol}               {}
 
 % other
 %------
