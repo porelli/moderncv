@@ -200,7 +200,7 @@
 % compatibility package with older versions of moderncv
 \RequirePackageWithOptions{moderncvcompatibility}
 
-\RequirePackage{l3regex}
+\RequirePackage{expl3}
 
 %-------------------------------------------------------------------------------
 %                class definition
@@ -246,11 +246,11 @@
 \NewDocumentCommand{\address}{mG{}G{}}{\def\@addressstreet{#1}\def\@addresscity{#2}\def\@addresscountry{#3}}
 
 % defines one's email (optional)
-% usage: \email{<email adress>}
+% usage: \email{<email address>}
 \newcommand*{\email}[1]{\def\@email{#1}}
 
 % defines one's home page (optional)
-% usage: \homepage{<url>}
+% usage: \homepage{<url>}{title}
 \newcommand*{\homepage}[2]{\def\@homepage{#1}\def\@homepagetitle{#2}}
 
 % adds a fixed/mobile/fax number to one's personal information (optional)
@@ -279,6 +279,10 @@
       \ifthenelse{\equal{#1}{skype}}   {\collectionadd[skype]{socials}   {#3}}                                            {}%
     }
     {\collectionadd[#1]{socials}{\protect\httplink[#3]{#2}}}}
+
+% defines one's work authorizations (optional)
+% usage: \work{title}
+\newcommand*{\work}[1]{\def\@work{#1}}
 
 % defines additional personal information (optional)
 % usage: \extrainfo{<text>}
@@ -319,6 +323,7 @@
 \newcommand*{\githubsocialsymbol}  {}
 \newcommand*{\gitlabsocialsymbol}  {}
 \newcommand*{\skypesocialsymbol}   {}
+\newcommand*{\worksymbol}          {}
 
 % other
 %------
@@ -496,7 +501,7 @@
 \newcommand*{\cvlistdoubleitem}[3][\listitemsymbol]{}
 
 % makes a typical resume job / education entry
-% usage: \cventry[spacing]{years}{degree/job title}{institution/employer}{localization}{optionnal: grade/...}{optional: comment/job description}
+% usage: \cventry[spacing]{years}{degree/job title}{institution/employer}{localization}{optional: grade/...}{optional: comment/job description}{worked as (eg. full-time, freelance..)}
 \newcommand*{\cventry}[7][.25em]{}
 
 % makes a resume entry with a proficiency comment
