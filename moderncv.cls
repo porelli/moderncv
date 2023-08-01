@@ -60,6 +60,15 @@
 
 % execute default options
 \ExecuteOptions{a4paper,11pt,final}
+% document type
+\newif\iflong
+\longtrue % true = CV, false = Résumé
+\newif\ifcoverletter
+\coverletterfalse % true = attach cover letter, false = print only cv/résumé
+\newif\ifinfoiconbold
+\infoiconboldtrue % true = make info icon text using bold, false = make info icon text not using bold
+\newif\ifinfotextbold
+\infotextboldfalse % true = make info text using bold, false = make info text not using bold
 
 % process given options
 \ProcessOptions\relax
@@ -229,7 +238,7 @@
 \newcommand*{\born}[1]{\def\@born{#1}}
 
 % defines one's email (optional)
-% usage: \email{<email adress>}
+% usage: \email{<email address>}
 \newcommand*{\email}[1]{\def\@email{#1}}
 
 % defines one's home page (optional)
@@ -321,6 +330,10 @@
       \ifthenelse{\equal{#1}{inspire}}      {\collectionadd[inspire]{socials}        {\protect\httpslink[#3]{inspirehep.net/authoris/#3}}}           {}%
       }
     {\collectionadd[#1]{socials}{\protect\httpslink[#3]{#2}}}}%
+
+% defines one's work authorizations (optional)
+% usage: \work{title}
+\newcommand*{\work}[1]{\def\@work{#1}}
 
 % defines additional personal information (optional)
 % usage: \extrainfo{<text>}
@@ -479,6 +492,7 @@
 %                resume design commands definitions
 %-------------------------------------------------------------------------------
 % elements
+\newcommand*{\dateinfo}[1]{\def\@dateinfo{#1}}
 % defines one's picture (optional)
 % usage: photo[<picture width>][<picture frame thickness>]{<picture filename>}
 \NewDocumentCommand{\photo}{O{64pt}O{0.4pt}m}{\def\@photowidth{#1}\def\@photoframewidth{#2}\def\@photo{#3}}
@@ -568,7 +582,7 @@
 \newcommand*{\cvlistdoubleitem}[3][\listitemsymbol]{}
 
 % makes a typical resume job / education entry
-% usage: \cventry[spacing]{years}{degree/job title}{institution/employer}{localization}{optionnal: grade/...}{optional: comment/job description}
+% usage: \cventry[spacing]{years}{degree/job title}{institution/employer}{localization}{optional: grade/...}{optional: comment/job description}{worked as (eg. full-time, freelance..)}
 \newcommand*{\cventry}[7][.25em]{}
 
 % makes a resume entry with a proficiency comment

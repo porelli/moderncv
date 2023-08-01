@@ -204,6 +204,7 @@
                   \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink[\@homepagetitle]{\@homepage}}{\httpslink[\@homepagetitle]{\@homepage}} }
                 \else{
                   \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink[\@homepagetitle]{\@homepage}}{\httpslink[\@homepagetitle]{\@homepage}} }\fi}}}}%
+        \ifthenelse{\isundefined{\@work}}{}{\makenewline{\worksymbol{\ifinfotextbold{\bfseries \@work}\else{\@work}\fi}}}%
         \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}}\fi%
         \ifthenelse{\isundefined{\@dateinfo}}{}{\makenewline{\@dateinfo}}%
     \end{minipage}\\[1em]

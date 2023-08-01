@@ -183,7 +183,8 @@
                 \bfseries
                   \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink[\@homepagetitle]{\@homepage}}{\httpslink[\@homepagetitle]{\@homepage}} }
               \else{
-                \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink[\@homepagetitle]{\@homepage}}{\httpslink[\@homepagetitle]{\@homepage}} }\fi}}}}% 
+                \ifthenelse{\equal{\@homepageprotocol}{http}}{\httplink[\@homepagetitle]{\@homepage}}{\httpslink[\@homepagetitle]{\@homepage}} }\fi}}}}%
+        \ifthenelse{\isundefined{\@work}}{}{\makenewline{\worksymbol{\ifinfotextbold{\bfseries \@work}\else{\@work}\fi}}}%
         \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}}\fi%
     \end{minipage}\\[2em]
   % recipient block
