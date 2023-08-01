@@ -374,7 +374,6 @@
 \newcommand*{\skypesocialsymbol}        {}
 \newcommand*{\stackoverflowsocialsymbol}{}
 \newcommand*{\bitbucketsocialsymbol}    {}
-\newcommand*{\skypesocialsymbol}        {}
 \newcommand*{\orcidsocialsymbol}        {}
 \newcommand*{\researchgatesocialsymbol} {}
 \newcommand*{\researcheridsocialsymbol} {}
@@ -385,7 +384,6 @@
 \newcommand*{\signalsocialsymbol}       {}
 \newcommand*{\codebergsocialsymbol}     {}
 \newcommand*{\discordsocialsymbol}      {}
-\newcommand*{\worksymbol}               {}
 \newcommand*{\twitchsocialsymbol}       {}
 \newcommand*{\youtubesocialsymbol}      {}
 \newcommand*{\tiktoksocialsymbol}       {}
@@ -395,6 +393,7 @@
 \newcommand*{\xboxsocialsymbol}         {}
 \newcommand*{\playstationsocialsymbol}  {}
 \newcommand*{\battlenetsocialsymbol}    {}
+\newcommand*{\worksymbol}               {}
 
 % other
 %------

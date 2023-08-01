@@ -51,9 +51,9 @@
 % gets an item from a collection
 % usage: \collectiongetitem{<collection name>}{<element id>}
 % where <element id> is an integer between 0 and (collectioncount-1)
-\newcommand*{\collectiongetitem}[m m]{%
-  {\ifinfotextbold{\bfseries \csname collection@#1@item\romannumeral #2\endcsname}\else{
-  \csname collection@#1@item\romannumeral #2\endcsname}\fi}}
+\NewDocumentCommand\collectiongetitem{m m}{%
+  \csname collection@#1@item\romannumeral #2\endcsname%
+}%
 
 % gets a key from a collection
 % usage: \collectiongetkey{<collection name>}{<element id>}
